@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0371c08-7efe-44e0-8f6f-d118c64f8346" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="" afterPath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/app/components/dashboard/dashboard.component.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/app/components/dashboard/dashboard.component.spec.ts" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/app/components/dashboard/dashboard.component.ts" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/app/components/home/home.component.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/app/components/home/home.component.spec.ts" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/app/components/home/home.component.ts" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/app/components/navbar/navbar.component.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/app/components/navbar/navbar.component.spec.ts" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/app/components/navbar/navbar.component.ts" />
       <change beforePath="$PROJECT_DIR$/client/package-lock.json" afterPath="$PROJECT_DIR$/client/package-lock.json" />
       <change beforePath="$PROJECT_DIR$/client/src/app/app.component.html" afterPath="$PROJECT_DIR$/client/src/app/app.component.html" />
       <change beforePath="$PROJECT_DIR$/client/src/app/app.module.ts" afterPath="$PROJECT_DIR$/client/src/app/app.module.ts" />
@@ -50,7 +60,7 @@
       <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/build-optimizer/package.json" afterPath="" />
       <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/build-optimizer/src/build-optimizer/build-optimizer.d.ts" afterPath="" />
       <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/build-optimizer/src/build-optimizer/build-optimizer.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/build-optimizer/src/build-optimizer/cli.d.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/build-optimizer/src/build-optimizer/cli.d.ts" afterPath="$PROJECT_DIR$/client/src/app/components/dashboard/dashboard.component.css" />
       <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/build-optimizer/src/build-optimizer/cli.js" afterPath="" />
       <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/build-optimizer/src/build-optimizer/webpack-loader.d.ts" afterPath="" />
       <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/build-optimizer/src/build-optimizer/webpack-loader.js" afterPath="" />
@@ -60,7 +70,7 @@
       <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/build-optimizer/src/helpers/transform-javascript.js" afterPath="" />
       <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/build-optimizer/src/index.d.ts" afterPath="" />
       <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/build-optimizer/src/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/build-optimizer/src/purify/cli.d.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/build-optimizer/src/purify/cli.d.ts" afterPath="$PROJECT_DIR$/client/src/app/components/home/home.component.css" />
       <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/build-optimizer/src/purify/cli.js" afterPath="" />
       <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/build-optimizer/src/purify/purify.d.ts" afterPath="" />
       <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/build-optimizer/src/purify/purify.js" afterPath="" />
@@ -99,7 +109,7 @@
       <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/core/src/json/interface.js" afterPath="" />
       <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/core/src/json/parser.d.ts" afterPath="" />
       <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/core/src/json/parser.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/core/src/json/parser_benchmark.d.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/core/src/json/parser_benchmark.d.ts" afterPath="$PROJECT_DIR$/client/src/app/components/navbar/navbar.component.css" />
       <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/core/src/json/parser_benchmark.js" afterPath="" />
       <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/core/src/json/schema/index.d.ts" afterPath="" />
       <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/core/src/json/schema/index.js" afterPath="" />
@@ -15176,16 +15186,15 @@
       <option name="presentableId" value="Default" />
       <updated>1512622184996</updated>
       <workItem from="1512622193674" duration="269000" />
-      <workItem from="1512622534866" duration="7367000" />
+      <workItem from="1512622534866" duration="7482000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7636000" />
+    <option name="totallyTimeSpent" value="7751000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="72" y="23" width="1049" height="737" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -15194,9 +15203,9 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32866043" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866043" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866043" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32866043" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -15353,7 +15362,7 @@
         <state relative-caret-position="184">
           <caret line="14" column="31" lean-forward="false" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
           <folding>
-            <element signature="e#0#55#0" expanded="true" />
+            <element signature="e#0#55#0" expanded="false" />
           </folding>
         </state>
       </provider>
