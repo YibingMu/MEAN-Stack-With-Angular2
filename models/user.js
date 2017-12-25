@@ -49,7 +49,7 @@ let passwordLengthChecker = (password) => {
     if (!password) {
         return false;
     } else {
-        if (password.length < 6n || password.length > 16) {
+        if (password.length < 6 || password.length > 16) {
             return false;
         } else {
             return true;

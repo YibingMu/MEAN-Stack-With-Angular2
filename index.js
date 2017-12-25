@@ -6,6 +6,7 @@ const config = require('./config/database.js');
 const bodyParser = require('body-parser');
 const path = require('path');
 const authentication = require('./routes/authentication')(router);
+const cors = require('cors');
 
 mongoose.Promise = global.Promise;
 mongoose.connect(config.uri, (err) => {
@@ -16,6 +17,10 @@ mongoose.connect(config.uri, (err) => {
     }
 });
 
+
+app.use(cors({
+    origin: 'http://localhost:4200'
+}));
 app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
