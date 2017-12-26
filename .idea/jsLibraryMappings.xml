@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{@types/mongoose, cookies-DefinitelyTyped, express-DefinitelyTyped, mongoose-DefinitelyTyped, node-DefinitelyTyped}" />
+    <file url="PROJECT" libraries="{@types/mongoose, @types/node, cookies-DefinitelyTyped, express-DefinitelyTyped, mongoose-DefinitelyTyped}" />
   </component>
 </project>

@@ -11,10 +11,10 @@
   <div class="form-group">
     <label for="username">Username</label>
     <div [ngClass]="{'has-error':(form.controls.username.errors && form.controls.username.dirty)
-
-                     ,'has-success': !form.controls.username.errors }">
+                     || (!usernameValid && form.controls.username.dirty)
+                     ,'has-success': !form.controls.username.errors && usernameValid }">
       <input type="text" name="username" class="form-control" id="username"
-             autocomplete="off" placeholder="*Username" formControlName="username" >
+             autocomplete="off" placeholder="*Username" formControlName="username" (blur)="checkUsername()" >
       <ul class="help-block">
         <li *ngIf="form.controls.username.errors?.required && form.controls.username.dirty">
           This field is required</li>
@@ -22,17 +22,18 @@
           Minimum characters: 3, Maximum characters: 15</li>
         <li *ngIf="form.controls.username.errors?.validateUsername && form.controls.username.dirty">
           This must be a valid Username</li>
-        <!--<li *ngIf="usernameMessage">{{usernameMessage}}</li>-->
+        <li *ngIf="usernameMessage">{{usernameMessage}}</li>
       </ul>
     </div>
   </div>
 
   <div class="form-group">
     <label for="email">Email</label>
-    <div [ngClass]="{'has-error':(form.controls.email.errors && form.controls.email.dirty) ,
-                     'has-success': !form.controls.email.errors }">
+    <div [ngClass]="{'has-error':(form.controls.email.errors && form.controls.email.dirty)
+                     || (!emailValid && form.controls.email.dirty) ,
+                     'has-success': !form.controls.email.errors && emailValid }">
       <input type="text" name="email" class="form-control" id="email"
-             autocomplete="off" placeholder="*Email" formControlName="email" >
+             autocomplete="off" placeholder="*Email" formControlName="email" (blur)="checkEmail()" >
       <ul class="help-block">
         <li *ngIf="form.controls.email.errors?.required && form.controls.email.dirty">
           This field is required</li>
@@ -40,7 +41,7 @@
           Minimum characters: 3, Maximum characters: 15</li>
         <li *ngIf="form.controls.email.errors?.validateEmail && form.controls.email.dirty">
           This must be a valid email</li>
-        <!--<li *ngIf="emailMessage">{{emailMessage}}</li>-->
+        <li *ngIf="emailMessage">{{emailMessage}}</li>
       </ul>
     </div>
   </div>
@@ -81,7 +82,7 @@
   </div>
 
 
-  <button [disabled]="!form.valid || processing " type="submit" class="btn btn-primary">Submit</button>
+  <button [disabled]="!form.valid || processing || !emailValid || !usernameValid " type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 

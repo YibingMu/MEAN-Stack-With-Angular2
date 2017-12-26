@@ -13,13 +13,13 @@ export class AuthService {
   registerUser(user){
     return this.http.post(this.domain + '/authentication/register', user);
   }
-  //
-  // checkUsername(username){
-  //   return this.http.get(this.domain + '/authentication/checkUsername', username);
-  // }
-  //
-  // checkEmail(email){
-  //   return this.http.get(this.domain + '/authentication/checkEmail', email);
-  // }
+
+  checkUsername(username){
+    return this.http.get(this.domain + '/authentication/checkUsername/' + username);
+  }
+
+  checkEmail(email){
+    return this.http.get(this.domain + '/authentication/checkEmail/' + email);
+  }
 
 }
