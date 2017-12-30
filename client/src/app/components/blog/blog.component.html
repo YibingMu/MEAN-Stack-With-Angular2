@@ -1,0 +1,61 @@
+<h1 class="page-header">Blog Feed</h1>
+
+<!--<div class="row show-hide-message">-->
+  <!--<div [ngClass]="messageClass">-->
+    <!--{{message}}-->
+  <!--</div>-->
+<!--</div>-->
+
+<button type="button" name="button" class="btn btn-warning" *ngIf="!newPost" (click)="newBlogForm()">New Post</button>
+<button [disabled]="loadingBlogs" type="button" name="button" class="btn btn-default" *ngIf="!newPost" (click)="reloadBlog()"><span class="glyphicon glyphicon-repeat"></span>&nbsp;&nbsp;Reload</button>
+
+<br>
+<br>
+
+<div *ngIf="!newPost">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Post Title</h3>
+    </div>
+    <div class="panel-body">
+      This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron
+      and three supporting pieces of content. Use it as a starting point to create something more unique.
+    </div>
+    <div class="panel-footer">
+      <strong>Post by:</strong>&nbsp;&nbsp;Yibing Mu
+      <br>
+      <strong>Date:</strong>&nbsp;&nbsp;Dec 29, 2017
+      <br>
+      <div>
+        <strong>Like:</strong>&nbsp;&nbsp;25
+        <br>
+        <strong>Dislike:</strong>&nbsp;&nbsp;2
+      </div>
+      <a href="#"><button type="button" name="button" class="btn btn-sm btn-info">Edit</button></a>
+      <a href="#"><button type="button" name="button" class="btn btn-sm btn-danger">Delete</button></a>
+
+      <div class="dropdown">
+        <button type="button" name="button" class="btn btn-sm btn-success">
+          <span class="glyphicon glyphicon-thumbs-up">&nbsp;</span>Likes: 25
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Yibing Mu</a>
+          <a href="#">Xing Li</a>
+          <a href="#">Zhixuan Yang</a>
+          <a href="#">Old Ma</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button type="button" name="button" class="btn btn-sm btn-warning">
+          <span class="glyphicon glyphicon-thumbs-down">&nbsp;</span>Dislikes: 2
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Yibing Mu</a>
+          <a href="#">Xing Li</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
