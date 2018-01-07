@@ -12,6 +12,38 @@
 <br>
 <br>
 
+<form [formGroup]="form" name="blogForm" (submit)="onBlogSubmit()" *ngIf="newPost">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <div [ngClass]="{'has-success':form.controls.title.valid,'has-error':form.controls.title.dirty && form.controls.title.errors}">
+      <input type="text" name="title" id="title" class="form-control" placeholder="*Blog Title"
+      autocomplete="off" formControlName="title">
+      <ul class="help-block">
+        <li *ngIf="form.controls.title.dirty && form.controls.title.errors?.required">
+          This field is required.</li>
+        <li *ngIf="(form.controls.title.dirty && form.controls.title.errors?.minlength) || (form.controls.title.dirty && form.controls.title.errors?.maxlength)">
+          MaxLength: 50, MinLength: 5</li>
+        <li *ngIf="form.controls.title.dirty && form.controls.title.errors?.alphaNumericValidation">
+          Must be a letter or number</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="body">Body</label>
+    <div [ngClass]="{'has-success':form.controls.body.valid,'has-error':form.controls.body.dirty && form.controls.body.errors}">
+      <textarea name="body" rows="8" cols="80" class="form-control" id="body" placeholder="*Body"
+                formControlName="body"></textarea>
+      <ul class="help-block">
+        <li *ngIf="form.controls.body.dirty && form.controls.body.errors?.required">
+          This field is required.</li>
+        <li *ngIf="(form.controls.body.dirty && form.controls.body.errors?.minlength) || (form.controls.body.dirty && form.controls.body.errors?.maxlength)">
+          MaxLength: 500, MinLength: 5</li>
+      </ul>
+    </div>
+  </div>
+</form>
+
 <div *ngIf="!newPost">
   <div class="panel panel-primary">
     <div class="panel-heading">
