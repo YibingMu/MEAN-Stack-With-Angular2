@@ -12,13 +12,13 @@ module.exports = (router) => {
             if (!req.body.body) {
                 res.json({success: false, message: 'Blog body is required'});
             } else {
-                if (!req.body.createBy) {
+                if (!req.body.createdBy) {
                     res.json({success: false, message: 'Blog creator is required'});
                 } else {
                     const blog = new Blog({
                         title: req.body.title,
                         body: req.body.body,
-                        createBy: req.body.createBy
+                        createdBy: req.body.createdBy
                     });
                     blog.save((err) => {
                         if (err) {

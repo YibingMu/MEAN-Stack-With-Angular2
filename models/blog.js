@@ -71,8 +71,8 @@ const commentValidators = [
 const blogSchema = new Schema({
     title: {type: String, required: true, validate: titleValidators},
     body: {type: String, required: true, validate: bodyValidators},
-    createBy: {type: String},
-    createAt: {type: Date, default: Date.now()},
+    createdBy: {type: String},
+    createdAt: {type: Date, default: Date.now()},
     likes: {type: Number, default: 0},
     likedBy: {type: Array},
     dislikes: {type: Number, default: 0},

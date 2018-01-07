@@ -1,10 +1,10 @@
 <h1 class="page-header">Blog Feed</h1>
 
-<!--<div class="row show-hide-message">-->
-  <!--<div [ngClass]="messageClass">-->
-    <!--{{message}}-->
-  <!--</div>-->
-<!--</div>-->
+<div class="row show-hide-message" *ngIf="message && newPost">
+  <div [ngClass]="messageClass">
+    {{message}}
+  </div>
+</div>
 
 <button type="button" name="button" class="btn btn-warning" *ngIf="!newPost" (click)="newBlogForm()">New Post</button>
 <button [disabled]="loadingBlogs" type="button" name="button" class="btn btn-default" *ngIf="!newPost" (click)="reloadBlog()"><span class="glyphicon glyphicon-repeat"></span>&nbsp;&nbsp;Reload</button>
@@ -42,6 +42,11 @@
       </ul>
     </div>
   </div>
+
+  <button [disabled]="processing" type="button" name="button" (click)="goBack()" class="btn btn-warning">Go Back</button>
+  <button [disabled]="processing || !form.valid" type="submit" name="button" class="btn btn-success">Submit</button>
+
+
 </form>
 
 <div *ngIf="!newPost">
