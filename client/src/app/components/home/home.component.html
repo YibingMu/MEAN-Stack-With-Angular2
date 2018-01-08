@@ -2,7 +2,8 @@
   <h1 class="display-3">Hello, world!</h1>
   <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
   <div>
-    <a class="btn btn-primary btn-lg" routerLink="/register" role="button">Register</a>
-    <a class="btn btn-primary btn-lg" routerLink="/login" role="button">Login</a>
+    <a *ngIf="!authService.loggedIn()" class="btn btn-primary btn-lg" routerLink="/register" role="button">Register</a>
+    <a *ngIf="!authService.loggedIn()" class="btn btn-default btn-lg" routerLink="/login" role="button">Login</a>
+    <a *ngIf="authService.loggedIn()" class="btn btn-success btn-lg" routerLink="/blog" role="button">View Blog</a>
   </div>
 </div>
