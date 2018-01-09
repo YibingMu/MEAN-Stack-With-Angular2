@@ -6,7 +6,7 @@
   </div>
 </div>
 
-<form (submit)="updateBlogSubmit()">
+<form (submit)="updateBlogSubmit()" *ngIf="!loading">
   <div class="form-group">
     <label for="title">Title</label>
     <input [disabled]="processing" type="text" name="title" id="title" placeholder="*Blog Title" class="form-control" [(ngModel)]="blog.title" >
@@ -17,7 +17,7 @@
     <textarea [disabled]="processing" id="body" rows="8" cols="40" class="form-control" name="body" placeholder="*Blog Body" [(ngModel)]="blog.body"></textarea>
     <a [routerLink]="['/delete-blog/', blog._id]"><button [disabled]="processing" name="button" type="button" class="btn btn-danger">Delete</button></a>
     <button [disabled]="processing" type="button" name="button" class="btn btn-success" (click)="goBack()">Go Back</button>
-    <button [disabled]="processing" type="button" name="save" class="btn btn-info">Save Changes</button>
+    <button [disabled]="processing" type="submit" name="save" class="btn btn-info">Save Changes</button>
   </div>
 
 </form>
