@@ -35,12 +35,17 @@ export class BlogService {
 
   getSingleBlog(id){
     this.createAuthenticationHeaders();
-    return this.http.get(this.domain + 'blogs/singleBlog/' + id , this.options);
+    return this.http.get(this.domain + 'blogs/singleBlog/' + id, this.options);
   }
 
   editBlog(blog){
     this.createAuthenticationHeaders();
-    return this.http.put(this.domain + 'blogs/updateBlog/', blog , this.options);
+    return this.http.put(this.domain + 'blogs/updateBlog/', blog, this.options);
+  }
+
+  deleteBlog(id){
+    this.createAuthenticationHeaders();
+    return this.http.delete(this.domain + 'blogs/deleteBlog/' + id, this.options);
   }
 
 }
