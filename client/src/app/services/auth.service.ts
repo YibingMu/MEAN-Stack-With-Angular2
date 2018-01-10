@@ -64,7 +64,13 @@ export class AuthService {
     return this.http.get(this.domain + 'authentication/profile', this.options);
   }
 
+  getPublicProfile(username){
+    this.createAuthenticationHeaders();
+    return this.http.get(this.domain + 'authentication/publicProfile/' + username, this.options);
+  }
+
   loggedIn() {
     return tokenNotExpired();
   }
+
 }

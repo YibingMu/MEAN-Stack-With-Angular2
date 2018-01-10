@@ -60,7 +60,7 @@
       <br>
       <strong>Date:</strong>&nbsp;&nbsp;{{ blog.createdAt | date:'MMM dd, yyyy' }}
       <br>
-      <div *ngIf="username === createdBy">
+      <div *ngIf="username === blog.createdBy">
         <strong>Like:</strong>&nbsp;&nbsp;{{ blog.likes }}
         <br>
         <strong>Dislike:</strong>&nbsp;&nbsp;{{ blog.dislikes }}
@@ -69,24 +69,20 @@
       <a [routerLink]="['/delete-blog/', blog._id]" *ngIf="username === blog.createdBy"><button type="button" name="button" class="btn btn-sm btn-danger">Delete</button></a>
 
       <div class="btn-group">
-        <button type="button" name="button" class="btn btn-sm btn-success dropdown-toggle" data-toggle="dropdown" *ngIf="username !== blog.createdBy">
-          <span class="glyphicon glyphicon-thumbs-up">&nbsp;</span>Likes: 25
+        <button [disabled]="blog.likedBy.indexOf(username) > -1" type="button" name="button" class="btn btn-sm btn-success dropdown-toggle" data-toggle="dropdown" *ngIf="username !== blog.createdBy" (click)="likeBlog(blog._id)">
+          <span class="glyphicon glyphicon-thumbs-up">&nbsp;</span>Likes: {{ blog.likes }}
         </button>
         <div class="dropdown-menu">
-          <a href="#">Yibing Mu</a>
-          <a href="#">Xing Li</a>
-          <a href="#">Zhixuan Yang</a>
-          <a href="#">Old Ma</a>
+          <a [routerLink]="['/user/', liker]" *ngFor="let liker of blog.likedBy">{{ liker }}</a>
         </div>
       </div>
 
       <div class="btn-group">
-        <button type="button" name="button" class="btn btn-sm btn-warning dropdown-toggle" data-toggle="dropdown" *ngIf="username !== blog.createdBy">
-          <span class="glyphicon glyphicon-thumbs-down">&nbsp;</span>Dislikes: 2
+        <button [disabled]="blog.dislikedBy.indexOf(username) > -1" type="button" name="button" class="btn btn-sm btn-warning dropdown-toggle" data-toggle="dropdown" *ngIf="username !== blog.createdBy" (click)="dislikeBlog(blog._id)">
+          <span class="glyphicon glyphicon-thumbs-down">&nbsp;</span>Dislikes: {{ blog.dislikes }}
         </button>
         <div class="dropdown-menu">
-          <a href="#">Yibing Mu</a>
-          <a href="#">Xing Li</a>
+          <a [routerLink]="['/user/', disliker]" *ngFor="let disliker of blog.dislikedBy">{{ disliker }}</a>
         </div>
       </div>
     </div>

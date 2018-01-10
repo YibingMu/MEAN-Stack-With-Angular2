@@ -86,7 +86,7 @@ export class BlogComponent implements OnInit {
       body: this.form.get('body').value,
       createdBy: this.username,
     }
-    this.blogService.newBlog(blog).subscribe(data => {
+    this.blogService.newBlog(blog).subscribe((data) => {
       if (!data['success']) {
         this.messageClass = 'alert alert-danger';
         this.message = data['message'];
@@ -117,8 +117,20 @@ export class BlogComponent implements OnInit {
     });
   }
 
+  likeBlog(id){
+    this.blogService.likeBlog(id).subscribe((data) => {
+      this.getAllBlogs();
+    })
+  }
+
+  dislikeBlog(id){
+    this.blogService.dislikeBlog(id).subscribe((data) => {
+      this.getAllBlogs();
+    })
+  }
+
   ngOnInit() {
-    this.authService.getProfile().subscribe(profile => {
+    this.authService.getProfile().subscribe((profile) => {
       this.username = profile['user'].username;
     });
     this.getAllBlogs();
