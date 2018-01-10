@@ -58,4 +58,13 @@ export class BlogService {
     return this.http.put(this.domain + 'blogs/dislikeBlog/', blogData, this.options);
   }
 
+  postNewComment(id, comment){
+    this.createAuthenticationHeaders();
+    const blogData = {
+      comment: comment,
+      id: id
+    }
+    return this.http.post(this.domain + 'blogs/comment/', blogData, this.options);
+  }
+
 }

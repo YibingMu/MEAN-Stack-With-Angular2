@@ -15,9 +15,12 @@ export class BlogComponent implements OnInit {
   newPost = false;
   loadingBlogs = false;
   form;
+  commentForm;
   processing = false;
   username;
   blogPosts;
+  newComment = [];
+  enabledComments = [];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -25,6 +28,7 @@ export class BlogComponent implements OnInit {
     private blogService: BlogService
   ) {
     this.createNewBlogForm();
+    this.createCommentForm();
   }
 
   createNewBlogForm(){
@@ -53,6 +57,14 @@ export class BlogComponent implements OnInit {
     this.form.get('body').enable();
   }
 
+  enableCommentForm(){
+    this.commentForm.get('comment').enable();
+  }
+
+  disableCommentForm(){
+    this.commentForm.get('comment').disable();
+  }
+
   alphaNumericValidation(controls){
     const regExp = new RegExp(/^[a-zA-Z0-9 ]+$/);
     if (regExp.test(controls.value)){
@@ -74,8 +86,18 @@ export class BlogComponent implements OnInit {
     }, 3000)
   }
 
-  draftComment(){
+  draftComment(id){
+    this.commentForm.reset();
+    this.newComment = [];
+    this.newComment.push(id);
+  }
 
+  cancelSubmission(id){
+    const index = this.newComment.indexOf(id);
+    this.newComment.splice(index,1);
+    this.commentForm.reset();
+    this.enableCommentForm();
+    this.processing = false;
   }
 
   onBlogSubmit(){
@@ -117,6 +139,17 @@ export class BlogComponent implements OnInit {
     });
   }
 
+  createCommentForm(){
+    this.commentForm = this.formBuilder.group({
+      comment: ['', Validators.compose([
+        Validators.required,
+        Validators.maxLength(200),
+        Validators.minLength(1),
+        this.alphaNumericValidation
+      ])],
+    });
+  }
+
   likeBlog(id){
     this.blogService.likeBlog(id).subscribe((data) => {
       this.getAllBlogs();
@@ -127,6 +160,30 @@ export class BlogComponent implements OnInit {
     this.blogService.dislikeBlog(id).subscribe((data) => {
       this.getAllBlogs();
     })
+  }
+
+  expand(id){
+    this.enabledComments.push(id);
+  }
+
+  collapse(id){
+    const index = this.enabledComments.indexOf(id);
+    this.enabledComments.splice(index, 1);
+  }
+
+  postComment(id){
+    this.disableCommentForm();
+    this.processing = true;
+    const comment = this.commentForm.get('comment').value;
+    this.blogService.postNewComment(id, comment).subscribe((data) => {
+      this.getAllBlogs();
+      const index = this.newComment.indexOf(id);
+      this.newComment.splice(index, 1);
+      this.enableCommentForm();
+      this.commentForm.reset();
+      this.processing = false;
+      if (this.enabledComments.indexOf(id) < 0 ) this.expand(id);
+    });
   }
 
   ngOnInit() {
