@@ -4,7 +4,8 @@
   "description": "MEAN Stack with Angular2",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd client && ng build --prod && cd .. && node index"
   },
   "repository": {
     "type": "git",

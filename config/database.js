@@ -1,7 +1,7 @@
 const crypto = require('crypto').randomBytes(256).toString('hex');
 
 module.exports = {
-    uri: 'mongodb://localhost:27017/mean-angular-2',
+    uri: 'mongodb://111111:11111111@ds155288.mlab.com:55288/blingblingblog',
     secret: 'crypto',
-    db: 'mean-angular-2',
+    db: 'blingblingblog',
 }
